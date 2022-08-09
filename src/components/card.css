@@ -16,7 +16,7 @@
 .stock {
   padding-left: 23px;
   padding-top: 13px;
-  font-size: 20px;
+  font-size: 15px;
   color: #3fd73f;
 }
 .firstRow {
@@ -105,6 +105,7 @@ height: 213px;
   align-items: flex-start;
   width: 94%;
   padding-left: 23px;
+  position: relative;
 }
 .price{
   display: flex;
@@ -114,9 +115,9 @@ height: 213px;
 .price::after {
   content: '';
     position: absolute;
-    top: 588px;
-    left: 286px;
-    width: 8%;
+    top: 26px;
+    left: 25px;
+    width: 19%;
     border-bottom: solid 1.5px #B4B4B4;
 }
 .prixunit{
