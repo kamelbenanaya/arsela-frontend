@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './fonts/Poppins/Poppins-Medium.ttf'
+import './fonts/Poppins/Poppins-Light.ttf'
+import './fonts/Baloo_Bhaijaan/BalooBhaijaan-Regular.ttf'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

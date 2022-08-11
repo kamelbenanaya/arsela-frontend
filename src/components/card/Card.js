@@ -6,7 +6,7 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons'
 
 
-import msi from '../images/msi.png'
+import msi from '../../images/msi.png'
 
 
 function Card() {
