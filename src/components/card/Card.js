@@ -6,10 +6,10 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { faCommentAlt } from '@fortawesome/free-regular-svg-icons'
 
 
-import msi from '../../images/msi.png'
 
 
-function Card() {
+
+function Card({productName,productImage,productDesc,productPrice,productBrand}) {
   return (
     
     <div className='card'>
@@ -22,25 +22,25 @@ function Card() {
         <p >Promotion -20%</p>
         </div>
         <div>
-            <img className='msipc' src={msi} alt="aaa"></img>
+            <img className='msipc' src={productImage} alt="aaa"></img>
         </div>
         <div className='alldescription'>
-        <p className='titreproduct'>Optix MAG241C</p>
-        <p className='nomproduct'> Moniteur 23,6" à résolution Full HD 1920 x 1080</p>
+        <p className='titreproduct'>{productBrand}</p>
+        <p className='nomproduct'> {productName}</p>
         <div className='stars'>
         <FontAwesomeIcon icon={faStar} className="star"/> 
         <FontAwesomeIcon icon={faStar} className="star"/> 
         <FontAwesomeIcon icon={faStar} className="star"/> 
         <FontAwesomeIcon icon={faStar} className="star"/> 
         <FontAwesomeIcon icon={faStar} className="star"/> </div>
-        <p className='descproduct'> Dalle incurvée 1500R pour un meilleur confort taux de reffffff</p>
+        <p className='descproduct'> {productDesc}</p>
         </div>
         <div className='pricereview'>
           <div className='price'><p className='prixunit'>560</p><p className='tnd'>TND</p></div>
           <div className='review'><FontAwesomeIcon icon={faCommentAlt} className="facomment"/>  <a href="./" style={{color:"#B4B4B4"}}>2 Reviews</a></div>
         </div>
         <div className='priceaddtocart'>
-        <div className='pricetoadd'><p className='prixunitreal'>2500</p><p className='tndreal'>TND</p></div>
+        <div className='pricetoadd'><p className='prixunitreal'>{productPrice}</p><p className='tndreal'>TND</p></div>
         <button className='addtocart'>Add to cart</button>
         </div>
     </div>
