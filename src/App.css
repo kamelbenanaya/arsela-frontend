@@ -29,6 +29,10 @@
 .App-link {
   color: #61dafb;
 }
+.beforecard{
+  display: flex;
+  flex-direction: row;
+}
 
 @keyframes App-logo-spin {
   from {
