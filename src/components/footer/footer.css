@@ -28,6 +28,7 @@ margin-top: 40px;
     list-style-type: none;
     text-align: left;
     padding-right: 71px;
+    color: #fff;
 }
 .information li a {
     border-bottom: none;
@@ -51,6 +52,7 @@ margin-top: 40px;
 }
 .additonal{
     width: 25%;
+    color:#fff;
     
 }
 .facebook{

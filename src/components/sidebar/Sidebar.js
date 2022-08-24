@@ -1,21 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./sidebar.css";
 import Slider from "@mui/material/Slider";
 
 const Sidebar = () => {
-const [checked, setChecked] = React.useState(false);
-  function valuetext(value) {
-    return `${value}°C`;
-  }
-  
-  const [value, setValue] = React.useState([0, 4000]);
-  const rangeSelector = (event, newValue) => {
-    setValue(newValue);
-    console.log(newValue)
+  const [marksState, setMarksState] = useState({
+    ACER: false,
+    MSI: false,
+    LENOVO: false,
+    PHONE: false,
+  });
+  const [priceRangeState, setPriceRangeState] = useState([0, 4000]);
+  const [categoriesState, setCategoriesState] = useState({
+    Laptop: false,
+    Phone: false,
+    Accesoires: false,
+  });
+  useEffect(() => {
+    console.log(marksState);
+    console.log("🚀 ~ file: Sidebar.js ~ line 20 ~ useEffect ~ marksState", marksState,priceRangeState,categoriesState)
+  }, []);
+  // useEffect(() => {
+  //   console.log(priceRangeState);
+  // }, [priceRangeState]);
+  // useEffect(() => {
+  //   console.log(categoriesState);
+  // }, [categoriesState]);
+  const handleMarqueChange = (event) => {
+    setMarksState({
+      ...marksState,
+      [event.target.name]: event.target.checked,
+    });
   };
+  const handleCategoriesChange = (event) => {
+    setCategoriesState({
+      ...categoriesState,
+      [event.target.name]: event.target.checked,
+    });
+  };
+  function valuetext(priceRangeState) {
+    return `${priceRangeState}°C`;
+  }
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setPriceRangeState(newValue);
   };
 
   return (
@@ -24,35 +51,19 @@ const [checked, setChecked] = React.useState(false);
         FILTER WITH MARQUE
       </h4>
       <label>
-        <input
-          type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" name="ACER" onChange={handleMarqueChange} />
         ACER
       </label>
       <label>
-        <input
-          type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" name="MSI" onChange={handleMarqueChange} />
         MSI
       </label>
       <label>
-        <input
-          type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" name="LENOVO" onChange={handleMarqueChange} />
         LENOVO
       </label>
       <label>
-        <input
-          type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" name="PHONE" onChange={handleMarqueChange} />
         PHONE
       </label>
 
@@ -60,40 +71,39 @@ const [checked, setChecked] = React.useState(false);
         FILTER WITH PRICE
       </h4>
       <Slider
-        getAriaLabel={() => 'Temperature range'}
-        value={value}
+        getAriaLabel={() => "Temperature range"}
+        value={priceRangeState}
         onChange={handleChange}
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
-        min = {0}
-        max = {4000}
+        min={0}
+        max={4000}
       />
-      
-      <p style={{color : "black", fontSize: "18px"}}>Price {value[0]} dt - {value[1]} dt </p>
+
+      <p style={{ color: "black", fontSize: "18px" }}>
+        Price {priceRangeState[0]} dt - {priceRangeState[1]} dt{" "}
+      </p>
 
       <h4 style={{ color: "black", fontWeight: "500", fontSize: "18px" }}>
-      FILTER WITH CATEGOTY      </h4>
+        FILTER WITH CATEGOTY{" "}
+      </h4>
       <label>
         <input
           type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
+          name="Laptop"
+          onChange={handleCategoriesChange}
         />
         Laptop
       </label>
       <label>
-        <input
-          type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
-        />
+        <input type="checkbox" name="Phone" onChange={handleCategoriesChange} />
         Phone
       </label>
       <label>
         <input
           type="checkbox"
-          defaultChecked={checked}
-          onChange={() => setChecked(!checked)}
+          name="Accesoires"
+          onChange={handleCategoriesChange}
         />
         Accesoires
       </label>
