@@ -1,0 +1,312 @@
+[
+    {
+        "_id": "62fa2415b18a193fdf9c6553",
+        "name": "Dell G5",
+        "price": 3000,
+        "pricePromotion": 2900,
+        "description": "12g ram,Proces i5 , SSD 500 gb",
+        "image": [
+            {
+                "_id": "62fa2415b18a193fdf9c654f",
+                "fieldname": "images",
+                "originalname": "pc-portable-dell-gaming-g5-15-5500-i7-10e-gen-32-go__1_-removebg-preview.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560405633-.png",
+                "path": "uploads\\1660560405633-.png",
+                "size": 161738,
+                "createdAt": "2022-08-15T10:46:45.648Z",
+                "updatedAt": "2022-08-15T10:46:45.648Z",
+                "__v": 0
+            },
+            {
+                "_id": "62fa2415b18a193fdf9c6551",
+                "fieldname": "images",
+                "originalname": "pc-portable-dell-gaming-g5-15-5500-i7-10e-gen-32-go-removebg-preview.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560405636-.png",
+                "path": "uploads\\1660560405636-.png",
+                "size": 225673,
+                "createdAt": "2022-08-15T10:46:45.676Z",
+                "updatedAt": "2022-08-15T10:46:45.676Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62ea7391eca509a15060fbae",
+            "name": "dell",
+            "createdAt": "2022-08-03T13:09:37.344Z",
+            "updatedAt": "2022-08-03T13:09:37.344Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:46:45.682Z",
+        "updatedAt": "2022-08-15T10:46:45.682Z",
+        "__v": 0
+    },
+    {
+        "_id": "62fa24adb18a193fdf9c655a",
+        "name": "Hp gamer",
+        "price": 2900,
+        "pricePromotion": 2500,
+        "description": "12g ram,Proces i7, SSD 500 gb GTX 1050",
+        "image": [
+            {
+                "_id": "62fa24adb18a193fdf9c6556",
+                "fieldname": "images",
+                "originalname": "4q1r3ea.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560557583-.png",
+                "path": "uploads\\1660560557583-.png",
+                "size": 63906,
+                "createdAt": "2022-08-15T10:49:17.587Z",
+                "updatedAt": "2022-08-15T10:49:17.587Z",
+                "__v": 0
+            },
+            {
+                "_id": "62fa24adb18a193fdf9c6558",
+                "fieldname": "images",
+                "originalname": "Ã©lÃ©ment-1.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560557584-.png",
+                "path": "uploads\\1660560557584-.png",
+                "size": 63906,
+                "createdAt": "2022-08-15T10:49:17.591Z",
+                "updatedAt": "2022-08-15T10:49:17.591Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62ea736beca509a15060fba8",
+            "name": "Hp",
+            "createdAt": "2022-08-03T13:08:59.765Z",
+            "updatedAt": "2022-08-03T13:08:59.765Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:49:17.595Z",
+        "updatedAt": "2022-08-15T10:49:17.595Z",
+        "__v": 0
+    },
+    {
+        "_id": "62fa24fdb18a193fdf9c6561",
+        "name": "Lenovo Legion y540",
+        "price": 3400,
+        "pricePromotion": 2990,
+        "description": "12g ram,Proces i7, SSD 500 gb RTX 3080",
+        "image": [
+            {
+                "_id": "62fa24fdb18a193fdf9c655d",
+                "fieldname": "images",
+                "originalname": "pc-portable-lenovo-legion-y540-i7-9eme-gen-32go-2to256ssd-rtx-2060-6-go-noir-81sx015bfg.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560637769-.png",
+                "path": "uploads\\1660560637769-.png",
+                "size": 64477,
+                "createdAt": "2022-08-15T10:50:37.773Z",
+                "updatedAt": "2022-08-15T10:50:37.773Z",
+                "__v": 0
+            },
+            {
+                "_id": "62fa24fdb18a193fdf9c655f",
+                "fieldname": "images",
+                "originalname": "Lenovo-ThinkPad-E-1.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560637769-.png",
+                "path": "uploads\\1660560637769-.png",
+                "size": 53771,
+                "createdAt": "2022-08-15T10:50:37.775Z",
+                "updatedAt": "2022-08-15T10:50:37.775Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62ea7236eca509a15060fb9e",
+            "name": "Lenovo",
+            "createdAt": "2022-08-03T13:03:50.980Z",
+            "updatedAt": "2022-08-03T13:03:50.980Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:50:37.778Z",
+        "updatedAt": "2022-08-15T10:50:37.778Z",
+        "__v": 0
+    },
+    {
+        "_id": "62fa25d9b18a193fdf9c6566",
+        "name": "Lenovo-ThinkPad-E-1",
+        "price": 2500,
+        "pricePromotion": 2000,
+        "description": "8g ram,Proces i5, SSD 256 gb GTX 960",
+        "image": [
+            {
+                "_id": "62fa25d9b18a193fdf9c6564",
+                "fieldname": "images",
+                "originalname": "Lenovo-ThinkPad-E-1.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660560857292-.png",
+                "path": "uploads\\1660560857292-.png",
+                "size": 53771,
+                "createdAt": "2022-08-15T10:54:17.296Z",
+                "updatedAt": "2022-08-15T10:54:17.296Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62ea7236eca509a15060fb9e",
+            "name": "Lenovo",
+            "createdAt": "2022-08-03T13:03:50.980Z",
+            "updatedAt": "2022-08-03T13:03:50.980Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:54:17.300Z",
+        "updatedAt": "2022-08-15T10:54:17.300Z",
+        "__v": 0
+    },
+    {
+        "_id": "62fa26a1b18a193fdf9c6570",
+        "name": "ASUS ZenBook UX430",
+        "price": 2200,
+        "pricePromotion": 2000,
+        "description": "8g ram,Proces i5, SSD 256 gb GTX 960",
+        "image": [
+            {
+                "_id": "62fa26a1b18a193fdf9c656c",
+                "fieldname": "images",
+                "originalname": "Plan de travail 1.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660561057826-.png",
+                "path": "uploads\\1660561057826-.png",
+                "size": 49189,
+                "createdAt": "2022-08-15T10:57:37.832Z",
+                "updatedAt": "2022-08-15T10:57:37.832Z",
+                "__v": 0
+            },
+            {
+                "_id": "62fa26a1b18a193fdf9c656e",
+                "fieldname": "images",
+                "originalname": "Location-ordinateur-Asus-ZenBook-UX534FA-A8068T-removebg-preview.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660561057826-.png",
+                "path": "uploads\\1660561057826-.png",
+                "size": 181112,
+                "createdAt": "2022-08-15T10:57:37.836Z",
+                "updatedAt": "2022-08-15T10:57:37.836Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62fa262cb18a193fdf9c6569",
+            "name": "Asus",
+            "createdAt": "2022-08-15T10:55:40.719Z",
+            "updatedAt": "2022-08-15T10:55:40.719Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:57:37.838Z",
+        "updatedAt": "2022-08-15T10:57:37.838Z",
+        "__v": 0
+    },
+    {
+        "_id": "62fa2701b18a193fdf9c6577",
+        "name": "Hp Omen",
+        "price": 3200,
+        "pricePromotion": 2900,
+        "description": "8g ram,Proces i5, SSD 256 gb GTX 960",
+        "image": [
+            {
+                "_id": "62fa2701b18a193fdf9c6573",
+                "fieldname": "images",
+                "originalname": "9082485-pictures-defaut.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660561153061-.png",
+                "path": "uploads\\1660561153061-.png",
+                "size": 78150,
+                "createdAt": "2022-08-15T10:59:13.064Z",
+                "updatedAt": "2022-08-15T10:59:13.064Z",
+                "__v": 0
+            },
+            {
+                "_id": "62fa2701b18a193fdf9c6575",
+                "fieldname": "images",
+                "originalname": "c06099583.png",
+                "encoding": "7bit",
+                "mimetype": "image/png",
+                "destination": "uploads",
+                "filename": "1660561153061-.png",
+                "path": "uploads\\1660561153061-.png",
+                "size": 101265,
+                "createdAt": "2022-08-15T10:59:13.066Z",
+                "updatedAt": "2022-08-15T10:59:13.066Z",
+                "__v": 0
+            }
+        ],
+        "brand": {
+            "_id": "62ea736beca509a15060fba8",
+            "name": "Hp",
+            "createdAt": "2022-08-03T13:08:59.765Z",
+            "updatedAt": "2022-08-03T13:08:59.765Z",
+            "__v": 0
+        },
+        "category": {
+            "_id": "62ea73aaeca509a15060fbb1",
+            "name": "Gamer",
+            "createdAt": "2022-08-03T13:10:02.131Z",
+            "updatedAt": "2022-08-03T13:10:02.131Z",
+            "__v": 0
+        },
+        "createdAt": "2022-08-15T10:59:13.068Z",
+        "updatedAt": "2022-08-15T10:59:13.068Z",
+        "__v": 0
+    }
+]

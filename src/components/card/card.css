@@ -2,9 +2,13 @@
   font-family: Poppins Medium;
 }
 
-
+/* div.beforecard > div:nth-child(1) > div {
+  margin-left: 35px;
+} */
 .card {
-  width: 351px;
+  /* width: 351px;
+  height: 595px; */
+  width: 289px;
   height: 595px;
   display: flex;
   flex-direction: column;
@@ -12,6 +16,8 @@
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 10px #0000001a;
   border-radius: 10px;
+  margin-right: 23px;
+  margin-top: 20px;
 }
 .stock {
   padding-left: 23px;
@@ -55,7 +61,7 @@
 height: 213px;
 }
 .msipc:hover{
-    transform: scale(1.2); 
+    transform: scale(1.1); 
     transition: transform 0.3s;
 }
 .alldescription{
