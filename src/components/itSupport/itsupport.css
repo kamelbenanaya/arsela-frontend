@@ -13,13 +13,13 @@ h6 {
 .itsupport {
   width: 1229px;
   display: flex;
-  height: 240px;
+  height: 225px;
   align-items: center;
   box-shadow: rgb(100 100 111 / 10%) 0px 0px 15px;
-  margin-left: 44px;
+  /* margin-left: 44px; */
+  margin-top: 20px;
 }
-.flexible {
-}
+
 .team {
   flex: 1;
 }

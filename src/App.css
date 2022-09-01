@@ -58,7 +58,11 @@
   box-shadow: rgb(100 100 111 / 10%) 0px 0px 15px;
   padding: 15px;
 }
-
+.productNotFound{
+  text-align: center;
+  width: 100%;
+  font-size: 42px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
