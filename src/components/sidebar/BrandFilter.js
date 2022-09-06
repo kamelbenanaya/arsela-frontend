@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./sidebar.css";
 
-
-
-
-export const BrandFilter = ({brands,setBrands}) => {
-    
- 
+export const BrandFilter = ({ brands, setBrands }) => {
   const handleMarqueChange = (event) => {
     var index = brands.findIndex((e) => e.name === event.target.name);
     let newState = brands;
@@ -15,14 +10,13 @@ export const BrandFilter = ({brands,setBrands}) => {
     setBrands([...newState]);
   };
 
-
   return (
     <>
       <h4 style={{ color: "black", fontWeight: "500", fontSize: "18px" }}>
         FILTER WITH MARQUE
       </h4>
       {brands &&
-        brands.map((e,index) => {
+        brands.map((e, index) => {
           return (
             <label key={index}>
               <input

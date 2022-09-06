@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./sidebar.css";
 
-
 export const CategoriesFilter = ({ categoriesState, setCategoriesState }) => {
-  
-
   const handleCategoriesChange = (event) => {
     var index = categoriesState.findIndex((e) => e.name === event.target.name);
     let newState = categoriesState;
@@ -19,14 +16,14 @@ export const CategoriesFilter = ({ categoriesState, setCategoriesState }) => {
         FILTER WITH CATEGORIES{" "}
       </h4>
       {categoriesState &&
-        categoriesState.map((e,index) => {
+        categoriesState.map((e, index) => {
           return (
             <label key={index}>
               <input
                 type="checkbox"
                 name={e.name}
                 onChange={handleCategoriesChange}
-                checked = {e.checked}
+                checked={e.checked}
               />
               {e.name}
             </label>

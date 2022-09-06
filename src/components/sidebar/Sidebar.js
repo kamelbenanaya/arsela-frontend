@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./sidebar.css";
-import { BrandFilter } from "./BrandFilter";
-import { PriceFilter } from "./PriceFilter";
-import { CategoriesFilter } from "./CategoriesFilter";
 
-const Sidebar = ({categoriesState,setCategoriesState,brands,setBrands,setPriceRangeState,priceRangeState,onSubmit,onReset}) => {
+
+const Sidebar = ({onSubmit,onReset,children}) => {
  
 
 
@@ -12,15 +10,7 @@ const Sidebar = ({categoriesState,setCategoriesState,brands,setBrands,setPriceRa
   return (
     <>
       <div className="filter">
-        <BrandFilter brands={brands} setBrands={setBrands} />
-        <PriceFilter
-          priceRangeState={priceRangeState}
-          setPriceRangeState={setPriceRangeState}
-        />
-        <CategoriesFilter
-          categoriesState={categoriesState}
-          setCategoriesState={setCategoriesState}
-        />
+   {children}
         <button className="submitbuttonfilter" onClick={onSubmit}>
           {" "}
           Submit
