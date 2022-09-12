@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState, useContext, createContext, useEffect } from "react";
 import "./card.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCommentAlt } from "@fortawesome/free-regular-svg-icons";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+// import Cardvertical from "./Cardvertical";
 
+import { useGlobalContext } from "../../context/GlobalContext";
 function Card({
   productName,
   productImage,
@@ -13,7 +16,68 @@ function Card({
   productBrand,
   Promotion,
   priceAfterPromo,
+  productId,
 }) {
+  //  const {setCartProducts,cartProducts} = useContext(globalContext)
+  // const context = useContext(GlobalContextProvider);
+  // console.log("🚀 ~ file: Card.js ~ line 26 ~ context", context);
+  const [Cart, setCart] = useState([productId]);
+  const [cartProducts, setCartProducts] = useGlobalContext();
+  const navigate = useNavigate();
+  let prevCard = [];
+
+  const addItem = () => {
+    console.log("addutem");
+    let item = {
+      productName,
+      productImage,
+      productDesc,
+      productPrice,
+      productBrand,
+      Promotion,
+      priceAfterPromo,
+      productId,
+      quantity: 1,
+    };
+
+    console.log(
+      "filteeer",
+      cartProducts.filter((e) => e.productId === item.productId)
+    );
+
+    const IsProductInCart =
+      cartProducts.filter((e) => e.productId === item.productId).length > 0;
+    console.log(
+      "🚀 ~ file: Card.js ~ line 45 ~ addItem ~ IsProductInCart",
+      IsProductInCart
+    );
+    if (IsProductInCart) {
+      let newCardProduct = [...cartProducts];
+      var index = newCardProduct.findIndex((i) => i.productId === productId);
+      item.quantity = newCardProduct[index].quantity + 1;
+      newCardProduct[index] = item;
+      setCartProducts(newCardProduct);
+    } else {
+      setCartProducts([...cartProducts, item]);
+    }
+
+    // cartProducts.forEach((e, index) => {
+    //   console.log("foreach");
+    //   if (e.productId === item.productId) {
+    //     item.quantity += 1;
+    //     setCartProducts([...cartProducts, item]);
+    //     console.log("test1");
+    //   } else {
+    //     setCartProducts([...cartProducts, item]);
+    //     console.log("test2");
+    //   }
+    // });
+  };
+  // <UserContext.Provider value={addItem()} />;
+  useEffect(() => {
+    console.log("console log setcartproducts", cartProducts);
+  }, [cartProducts]);
+
   return (
     <div className="card">
       <div className="firstRow">
@@ -65,7 +129,16 @@ function Card({
           <p className="prixunitreal">{priceAfterPromo}</p>
           <p className="tndreal">TND</p>
         </div>
-        <button className="addtocart">Add to cart</button>
+        <button
+          className="addtocart"
+          type="button"
+          onClick={() => {
+            addItem();
+          }}
+          // onClick={()=>{navigate("/cart");}}
+        >
+          Add to cart
+        </button>
       </div>
     </div>
   );

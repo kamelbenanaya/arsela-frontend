@@ -38,9 +38,11 @@ export const ProductList = ({
       {productsList &&
         productsList.map((product, index) => {
           // if (index < 4) {
+
           return (
             <div>
               <Card
+                productId={product._id}
                 key={index}
                 productName={product.name}
                 productImage={`${process.env.REACT_APP_BACKEND_URL}/${product.image[0]?.destination}/${product.image[0]?.filename}`}

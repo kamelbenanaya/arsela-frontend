@@ -1,17 +1,16 @@
-import "./App.css";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/Footer";
-import Sidebar from "./components/sidebar/Sidebar";
-import { ItSupport } from "./components/itSupport/ItSupport";
+import "./style.css";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+import Sidebar from "../../components/sidebar/Sidebar";
+import { ItSupport } from "../../components/itSupport/ItSupport";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import Slider from "./components/silder/Slider";
-import { ProductList } from "./components/productsList/ProductList";
-import { BrandFilter } from "./components/sidebar/BrandFilter";
-import { PriceFilter } from "./components/sidebar/PriceFilter";
-import { CategoriesFilter } from "./components/sidebar/CategoriesFilter";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Slider from "../../components/silder/Slider";
+import { ProductList } from "../../components/productsList/ProductList";
+import { BrandFilter } from "../../components/sidebar/BrandFilter";
+import { PriceFilter } from "../../components/sidebar/PriceFilter";
+import { CategoriesFilter } from "../../components/sidebar/CategoriesFilter";
 
 const getCategories = async () => {
   const response = await axios.get("http://localhost:3001/api/v1/categories/");
@@ -159,19 +158,13 @@ function App() {
   }, [dataCategories]);
 
   return (
-    //   <BrowserRouter>
-    //   <Routes>
-    //       <Route index element={<Home />} />
-    //       <Route path="/cart" element={<Cart />}/>
-    //   </Routes>
-    // </BrowserRouter>,
     <div className="App">
-      {/* <Header />
+      <Header />
       <Slider />
       <div className="app-container ">
         <div className="sidebar">
           <Sidebar onSubmit={onSubmit} onReset={resetOnSubmit}>
-            {" "}
+            
             <BrandFilter brands={brands} setBrands={setBrands} />
             <PriceFilter
               priceRangeState={priceRangeState}
@@ -195,7 +188,7 @@ function App() {
           <ItSupport />
         </div>
       </div>
-      <Footer /> */}
+      <Footer />
     </div>
   );
 }
