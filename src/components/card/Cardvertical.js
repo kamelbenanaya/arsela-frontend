@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCommentAlt } from "@fortawesome/free-regular-svg-icons";
-import msi from "../../images/msi.png";
 import { useGlobalContext } from "../../context/GlobalContext";
 
 function Cardvertical({
@@ -20,16 +19,26 @@ function Cardvertical({
   count,
 }) {
   console.log("🚀 ~ file: Cardvertical.js ~ line 23 ~ productId", productId);
-  const [cartProducts, setCartProducts] = useGlobalContext();
+  const {cartProducts, setCartProducts} = useGlobalContext();
+  // const ProductPriceintial = productPrice;
 
-  // let [count,setCount]=useState(0)
   function incrementCount() {
-    // setCount((count) => count + 1);
     let newProductList = [...cartProducts];
 
     var index = newProductList.findIndex((i) => i.productId === productId);
 
+    const ProductPriceintial = newProductList[index].intialprice;
+    const ProductPricePromo = newProductList[index].intialpricePromo;
+    console.log(
+      "🚀 ~ file: Cardvertical.js ~ line 31 ~ incrementCount ~ ProductPriceintial",
+      ProductPriceintial
+    );
+    // const ProductPriceAfterPromointial = newProductList[index].priceAfterPromo;
     newProductList[index].quantity = count + 1;
+    newProductList[index].productPrice =
+      ProductPriceintial * newProductList[index].quantity;
+    newProductList[index].priceAfterPromo =
+      ProductPricePromo * newProductList[index].quantity;
 
     setCartProducts(newProductList);
   }
@@ -43,8 +52,13 @@ function Cardvertical({
     let newProductList = [...cartProducts];
 
     var index = newProductList.findIndex((i) => i.productId === productId);
-
+    const ProductPriceintial = newProductList[index].intialprice;
+    const ProductPricePromo = newProductList[index].intialpricePromo;
     newProductList[index].quantity = count - 1;
+    newProductList[index].productPrice =
+      ProductPriceintial * newProductList[index].quantity;
+    newProductList[index].priceAfterPromo =
+      ProductPricePromo * newProductList[index].quantity;
     if (newProductList[index].quantity === 0) {
       return setCartProducts(
         cartProducts.filter(
@@ -55,14 +69,6 @@ function Cardvertical({
     setCartProducts(newProductList);
   }
 
-  // useEffect(() => {
-  //   console.log(
-  //     "🚀 ~ file: Cardvertical.js ~ line 30 ~ incrementCount ~ currentProductList",
-  //     currentProductList
-  //   );
-  // }, [cartProducts]);
-
-  // console.log("count", setCount);
   return (
     <div className="cardVertical">
       <div className="firstRowVertical">

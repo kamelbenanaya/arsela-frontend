@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./header.css";
 import logoheader from "../../images/normal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,8 +13,17 @@ import {
   useParams,
   Link,
 } from "react-router-dom";
-
+import { useGlobalContext } from "../../context/GlobalContext";
 function Header() {
+  const {cartTotalItems, setCartTotalItems} =
+    useGlobalContext();
+  useEffect(() => {
+    console.log(
+      "🚀 ~ file: Header.js ~ line 19 ~ Header ~ cartTotalItems",
+      cartTotalItems
+    );
+  }, [cartTotalItems]);
+
   return (
     <div className="Menu">
       <div className="logomenu">
@@ -52,7 +61,13 @@ function Header() {
       </nav>
       <div className="iconsheader">
         <FontAwesomeIcon icon={faHeart} className="iconheader" />
-        <FontAwesomeIcon icon={faCartShopping} className="iconheader" />
+
+        <Link to="/cart">
+          <div className="containerCartShopping">
+            <FontAwesomeIcon icon={faCartShopping} className="iconheader" />
+            <p className="countshopcard"> {cartTotalItems} </p>
+          </div>
+        </Link>
         <FontAwesomeIcon icon={faUser} className="iconheader" />
       </div>
       <div>

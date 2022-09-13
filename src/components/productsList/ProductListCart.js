@@ -5,8 +5,7 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import Cardvertical from "../card/Cardvertical";
 
 const ProductListCart = () => {
-  const [cartProducts, setCartProducts] = useGlobalContext();
-  console.log("tesssssssssssssssssstt", cartProducts);
+  const {cartProducts} = useGlobalContext();
 
   return (
     <div>
@@ -22,9 +21,9 @@ const ProductListCart = () => {
                 productName={product?.productName}
                 productImage={product?.productImage}
                 productDesc={product?.productDesc}
-                productPrice={product?.productPrice}
+                productPrice={product?.productPrice.toFixed(0)}
                 Promotion={product?.Promotion}
-                priceAfterPromo={product?.priceAfterPromo}
+                priceAfterPromo={product?.priceAfterPromo.toFixed(0)}
                 productBrand={product?.productBrand}
                 count={product?.quantity}
               />

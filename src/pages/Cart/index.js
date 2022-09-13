@@ -7,7 +7,7 @@ import React, { useEffect, useState, useContext, createContext } from "react";
 import { useGlobalContext } from "../../context/GlobalContext";
 import ProductListCart  from "../../components/productsList/ProductListCart";
 export const Index = () => {
-  const [cartProducts,setCartProducts]=useGlobalContext()
+  const {cartProducts,setCartProducts}=useGlobalContext()
   console.log("🚀 ~ file: index.js ~ line 11 ~ Index ~ cartProducts", cartProducts)
 
   return (

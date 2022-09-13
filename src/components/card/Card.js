@@ -18,16 +18,17 @@ function Card({
   priceAfterPromo,
   productId,
 }) {
-  //  const {setCartProducts,cartProducts} = useContext(globalContext)
-  // const context = useContext(GlobalContextProvider);
-  // console.log("🚀 ~ file: Card.js ~ line 26 ~ context", context);
+  console.log(
+    "🚀 ~ file: Card.js ~ line 24 ~ useGlobalContext",
+    useGlobalContext()
+  );
+
   const [Cart, setCart] = useState([productId]);
-  const [cartProducts, setCartProducts] = useGlobalContext();
+  const { cartProducts, setCartProducts, cartTotalItems, setCartTotalItems } =
+    useGlobalContext();
   const navigate = useNavigate();
-  let prevCard = [];
 
   const addItem = () => {
-    console.log("addutem");
     let item = {
       productName,
       productImage,
@@ -38,13 +39,9 @@ function Card({
       priceAfterPromo,
       productId,
       quantity: 1,
+      intialprice: productPrice,
+      intialpricePromo: priceAfterPromo,
     };
-
-    console.log(
-      "filteeer",
-      cartProducts.filter((e) => e.productId === item.productId)
-    );
-
     const IsProductInCart =
       cartProducts.filter((e) => e.productId === item.productId).length > 0;
     console.log(
@@ -54,29 +51,35 @@ function Card({
     if (IsProductInCart) {
       let newCardProduct = [...cartProducts];
       var index = newCardProduct.findIndex((i) => i.productId === productId);
+      const ProductPriceintial = newCardProduct[index].productPrice;
+      // console.log("🚀 ~ file: Card.js ~ line 53 ~ addItem ~ ProductPriceintial", ProductPriceintial)
+      const ProductPricePromo = newCardProduct[index].priceAfterPromo;
+
       item.quantity = newCardProduct[index].quantity + 1;
+      console.log(
+        "🚀 ~ file: Card.js ~ line 61 ~ addItem ~ newCardProduct[index].quantity",
+        newCardProduct[index].quantity
+      );
+
+      newCardProduct[index].productPrice = ProductPriceintial * item.quantity;
+      newCardProduct[index].priceAfterPromo = ProductPricePromo * item.quantity;
+      console.log(
+        "🚀 ~ file: Card.js ~ line 59 ~ addItem ~ newCardProduct[index].productPrice",
+        newCardProduct[index].productPrice
+      );
+      item.productPrice = newCardProduct[index].productPrice;
+      item.priceAfterPromo = newCardProduct[index].priceAfterPromo;
       newCardProduct[index] = item;
       setCartProducts(newCardProduct);
     } else {
+      console.log("else");
       setCartProducts([...cartProducts, item]);
     }
-
-    // cartProducts.forEach((e, index) => {
-    //   console.log("foreach");
-    //   if (e.productId === item.productId) {
-    //     item.quantity += 1;
-    //     setCartProducts([...cartProducts, item]);
-    //     console.log("test1");
-    //   } else {
-    //     setCartProducts([...cartProducts, item]);
-    //     console.log("test2");
-    //   }
-    // });
   };
-  // <UserContext.Provider value={addItem()} />;
+
   useEffect(() => {
-    console.log("console log setcartproducts", cartProducts);
-  }, [cartProducts]);
+    console.log("console log test", cartTotalItems);
+  }, [cartTotalItems]);
 
   return (
     <div className="card">
