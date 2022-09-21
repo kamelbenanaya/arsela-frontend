@@ -5,6 +5,9 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCommentAlt } from "@fortawesome/free-regular-svg-icons";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // import Cardvertical from "./Cardvertical";
 
 import { useGlobalContext } from "../../context/GlobalContext";
@@ -24,9 +27,9 @@ function Card({
   );
 
   const [Cart, setCart] = useState([productId]);
-  const { cartProducts, setCartProducts, cartTotalItems, setCartTotalItems } =
-    useGlobalContext();
+  const { globalState, globalDispatch } = useGlobalContext();
   const navigate = useNavigate();
+  const notify = () => toast.success("Product was added");
 
   const addItem = () => {
     let item = {
@@ -42,44 +45,42 @@ function Card({
       intialprice: productPrice,
       intialpricePromo: priceAfterPromo,
     };
-    const IsProductInCart =
-      cartProducts.filter((e) => e.productId === item.productId).length > 0;
-    console.log(
-      "🚀 ~ file: Card.js ~ line 45 ~ addItem ~ IsProductInCart",
-      IsProductInCart
-    );
-    if (IsProductInCart) {
-      let newCardProduct = [...cartProducts];
-      var index = newCardProduct.findIndex((i) => i.productId === productId);
-      const ProductPriceintial = newCardProduct[index].productPrice;
-      // console.log("🚀 ~ file: Card.js ~ line 53 ~ addItem ~ ProductPriceintial", ProductPriceintial)
-      const ProductPricePromo = newCardProduct[index].priceAfterPromo;
+    globalDispatch({ type: "addItemToCart", item });
 
-      item.quantity = newCardProduct[index].quantity + 1;
-      console.log(
-        "🚀 ~ file: Card.js ~ line 61 ~ addItem ~ newCardProduct[index].quantity",
-        newCardProduct[index].quantity
-      );
+    // const IsProductInCart =
+    //   cartProducts.filter((e) => e.productId === item.productId).length > 0;
+    // console.log(
+    //   "🚀 ~ file: Card.js ~ line 45 ~ addItem ~ IsProductInCart",
+    //   IsProductInCart
+    // );
+    // if (IsProductInCart) {
+    //   let newCardProduct = [...cartProducts];
+    //   var index = newCardProduct.findIndex((i) => i.productId === productId);
+    //   const ProductPriceintial = newCardProduct[index].productPrice;
+    //   // console.log("🚀 ~ file: Card.js ~ line 53 ~ addItem ~ ProductPriceintial", ProductPriceintial)
+    //   const ProductPricePromo = newCardProduct[index].priceAfterPromo;
 
-      newCardProduct[index].productPrice = ProductPriceintial * item.quantity;
-      newCardProduct[index].priceAfterPromo = ProductPricePromo * item.quantity;
-      console.log(
-        "🚀 ~ file: Card.js ~ line 59 ~ addItem ~ newCardProduct[index].productPrice",
-        newCardProduct[index].productPrice
-      );
-      item.productPrice = newCardProduct[index].productPrice;
-      item.priceAfterPromo = newCardProduct[index].priceAfterPromo;
-      newCardProduct[index] = item;
-      setCartProducts(newCardProduct);
-    } else {
-      console.log("else");
-      setCartProducts([...cartProducts, item]);
-    }
+    //   item.quantity = newCardProduct[index].quantity + 1;
+    //   console.log(
+    //     "🚀 ~ file: Card.js ~ line 61 ~ addItem ~ newCardProduct[index].quantity",
+    //     newCardProduct[index].quantity
+    //   );
+
+    //   newCardProduct[index].productPrice = ProductPriceintial * item.quantity;
+    //   newCardProduct[index].priceAfterPromo = ProductPricePromo * item.quantity;
+    //   console.log(
+    //     "🚀 ~ file: Card.js ~ line 59 ~ addItem ~ newCardProduct[index].productPrice",
+    //     newCardProduct[index].productPrice
+    //   );
+    //   item.productPrice = newCardProduct[index].productPrice;
+    //   item.priceAfterPromo = newCardProduct[index].priceAfterPromo;
+    //   newCardProduct[index] = item;
+    //   setCartProducts(newCardProduct);
+    // } else {
+    //   console.log("else");
+    //   setCartProducts([...cartProducts, item]);
+    // }
   };
-
-  useEffect(() => {
-    console.log("console log test", cartTotalItems);
-  }, [cartTotalItems]);
 
   return (
     <div className="card">
@@ -132,11 +133,25 @@ function Card({
           <p className="prixunitreal">{priceAfterPromo}</p>
           <p className="tndreal">TND</p>
         </div>
+        <div>
+          <ToastContainer
+            position="bottom-left"
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        </div>
         <button
           className="addtocart"
           type="button"
           onClick={() => {
             addItem();
+            notify();
           }}
           // onClick={()=>{navigate("/cart");}}
         >

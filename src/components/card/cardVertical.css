@@ -165,8 +165,8 @@
 .priceVertical::after {
   content: "";
   position: absolute;
-  top: 145px;
-  left: 28px;
+  top: 117px;
+  left: 25px;
   width: 28%;
   border-bottom: solid 1.5px #b4b4b4;
 }

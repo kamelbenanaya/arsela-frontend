@@ -164,7 +164,6 @@ function App() {
       <div className="app-container ">
         <div className="sidebar">
           <Sidebar onSubmit={onSubmit} onReset={resetOnSubmit}>
-            
             <BrandFilter brands={brands} setBrands={setBrands} />
             <PriceFilter
               priceRangeState={priceRangeState}

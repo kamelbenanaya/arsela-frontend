@@ -1,12 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useReducer } from "react";
 
 import "./cardVertical.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faCommentAlt } from "@fortawesome/free-regular-svg-icons";
 import { useGlobalContext } from "../../context/GlobalContext";
-
+import { incrementCount } from "../../context/helpers";
 function Cardvertical({
   productId,
   productName,
@@ -16,58 +15,38 @@ function Cardvertical({
   productBrand,
   Promotion,
   priceAfterPromo,
-  count,
+  quantity,
+  intialprice,
+  intialpricePromo,
 }) {
   console.log("🚀 ~ file: Cardvertical.js ~ line 23 ~ productId", productId);
-  const {cartProducts, setCartProducts} = useGlobalContext();
-  // const ProductPriceintial = productPrice;
-
-  function incrementCount() {
-    let newProductList = [...cartProducts];
-
-    var index = newProductList.findIndex((i) => i.productId === productId);
-
-    const ProductPriceintial = newProductList[index].intialprice;
-    const ProductPricePromo = newProductList[index].intialpricePromo;
-    console.log(
-      "🚀 ~ file: Cardvertical.js ~ line 31 ~ incrementCount ~ ProductPriceintial",
-      ProductPriceintial
-    );
-    // const ProductPriceAfterPromointial = newProductList[index].priceAfterPromo;
-    newProductList[index].quantity = count + 1;
-    newProductList[index].productPrice =
-      ProductPriceintial * newProductList[index].quantity;
-    newProductList[index].priceAfterPromo =
-      ProductPricePromo * newProductList[index].quantity;
-
-    setCartProducts(newProductList);
-  }
-  useEffect(() => {
-    console.log(
-      "🚀 ~ file: Cardvertical.js ~ line 37 ~ incrementCount ~ setCartProducts",
-      cartProducts
-    );
-  }, [cartProducts]);
-  function decrementCount() {
-    let newProductList = [...cartProducts];
-
-    var index = newProductList.findIndex((i) => i.productId === productId);
-    const ProductPriceintial = newProductList[index].intialprice;
-    const ProductPricePromo = newProductList[index].intialpricePromo;
-    newProductList[index].quantity = count - 1;
-    newProductList[index].productPrice =
-      ProductPriceintial * newProductList[index].quantity;
-    newProductList[index].priceAfterPromo =
-      ProductPricePromo * newProductList[index].quantity;
-    if (newProductList[index].quantity === 0) {
-      return setCartProducts(
-        cartProducts.filter(
-          (r) => r.productId !== newProductList[index].productId
-        )
-      );
-    }
-    setCartProducts(newProductList);
-  }
+  const { globalState, globalDispatch } = useGlobalContext();
+  console.log(
+    "🚀 ~ file: Cardvertical.js ~ line 23 ~ globalState",
+    globalState
+  );
+  const incrementCountOnClick = () => {
+    globalDispatch({
+      type: "incrementCount",
+      productId,
+      intialprice,
+      intialpricePromo,
+    });
+  };
+  const decrementCountonClick = () => {
+    globalDispatch({
+      type: "decrementCount",
+      productId,
+      intialprice,
+      intialpricePromo,
+    });
+  };
+  const deleteProductInCartOnClick = () => {
+    globalDispatch({
+      type: "deleteProductInCart",
+      productId,
+    });
+  };
 
   return (
     <div className="cardVertical">
@@ -114,12 +93,13 @@ function Cardvertical({
       </div>
       <div className="lastRowVertical">
         <div className="plusMinsRow">
-          <button onClick={incrementCount}>+</button>
-          <div>{count}</div>
-          <button onClick={decrementCount} disabled={count === 0}>
+          <button onClick={incrementCountOnClick}>+</button>
+          <div>{quantity}</div>
+          <button onClick={decrementCountonClick} disabled={quantity === 0}>
             -
           </button>
         </div>
+        <button onClick={deleteProductInCartOnClick}>Remove</button>
         <div className="pricereviewVertical">
           {productPrice != priceAfterPromo && (
             <div className="priceVertical">

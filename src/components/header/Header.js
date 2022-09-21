@@ -15,14 +15,9 @@ import {
 } from "react-router-dom";
 import { useGlobalContext } from "../../context/GlobalContext";
 function Header() {
-  const {cartTotalItems, setCartTotalItems} =
+  const {globalState} =
     useGlobalContext();
-  useEffect(() => {
-    console.log(
-      "🚀 ~ file: Header.js ~ line 19 ~ Header ~ cartTotalItems",
-      cartTotalItems
-    );
-  }, [cartTotalItems]);
+
 
   return (
     <div className="Menu">
@@ -65,7 +60,7 @@ function Header() {
         <Link to="/cart">
           <div className="containerCartShopping">
             <FontAwesomeIcon icon={faCartShopping} className="iconheader" />
-            <p className="countshopcard"> {cartTotalItems} </p>
+            <p className="countshopcard"> {globalState.cartTotalItems} </p>
           </div>
         </Link>
         <FontAwesomeIcon icon={faUser} className="iconheader" />

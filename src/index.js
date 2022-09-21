@@ -18,6 +18,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { GlobalContextProvider } from "./context/GlobalContext";
+import Test from "./pages/Cart/test";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const queryClient = new QueryClient();
@@ -29,9 +30,10 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </BrowserRouter>
-      ,{/* <Home /> */}
+      {/* <Home /> */}
       <ReactQueryDevtools />
     </GlobalContextProvider>
   </QueryClientProvider>

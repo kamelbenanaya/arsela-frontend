@@ -1,0 +1,57 @@
+.PlaceOrderContainerAll {
+  width: 500px;
+  /* background-color: blue; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.PlaceOrderContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.imageContainer {
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+}
+.quantityImage {
+  text-align: right;
+  position: absolute;
+  right: 0;
+  top: -29px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 15px;
+  width: fit-content;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.titleProductPlaceOrder {
+  padding-left: 20px;
+  width: 100%;
+}
+.separteur {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid #000;
+}
+.SubtotalAll {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+.firstRowTitleProductPlaceOrder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.totalCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
