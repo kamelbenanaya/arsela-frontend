@@ -14,15 +14,21 @@ import { CategoriesFilter } from "./components/sidebar/CategoriesFilter";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const getCategories = async () => {
-  const response = await axios.get("http://localhost:3001/api/v1/categories/");
+  const response = await axios.get(
+    "https://api-talents.lebondeveloppeur.com/api/v1/categories/"
+  );
   return response.data.data;
 };
 const getBrands = async () => {
-  const response = await axios.get("http://localhost:3001/api/v1/brands/");
+  const response = await axios.get(
+    "https://api-talents.lebondeveloppeur.com/api/v1/brands/"
+  );
   return response.data.data;
 };
 const getProducts = async () => {
-  const response = await axios.get("http://localhost:3001/api/v1/products/");
+  const response = await axios.get(
+    "https://api-talents.lebondeveloppeur.com/api/v1/products/"
+  );
   return response.data.data;
 };
 const getProductsFiltred = async ({ queryKey }) => {
@@ -32,9 +38,12 @@ const getProductsFiltred = async ({ queryKey }) => {
   );
 
   const { brand, category, min, max } = queryKey[1];
-  const response = await axios.get("http://localhost:3001/api/v1/products/", {
-    params: { brand, category, min, max },
-  });
+  const response = await axios.get(
+    "https://api-talents.lebondeveloppeur.com/api/v1/products/",
+    {
+      params: { brand, category, min, max },
+    }
+  );
   return response.data.data;
 };
 const UsegetProductsFiltred = (data) => {
