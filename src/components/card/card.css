@@ -5,6 +5,20 @@
 /* div.beforecard > div:nth-child(1) > div {
   margin-left: 35px;
 } */
+.lineprice {
+  background-color: #b4b4b4;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 27px;
+}
+.price {
+  display: flex;
+  /* align-items: end; */
+  align-items: baseline;
+  height: 100%;
+  position: relative;
+}
 .card {
   /* width: 351px;
   height: 595px; */
@@ -126,24 +140,9 @@
   flex-grow: 1;
   height: 50px;
   padding-left: 23px;
-  position: relative;
   /* background-color: blue; */
 }
-.price {
-  display: flex;
-  /* align-items: end; */
-  align-items: baseline;
-  /* background-color: brown; */
-  height: 100%;
-}
-.price::after {
-  content: "";
-  position: absolute;
-  top: 26px;
-  left: 25px;
-  width: 19%;
-  border-bottom: solid 1.5px #b4b4b4;
-}
+
 .prixunit {
   color: lightgrey;
   font-size: 20px;
@@ -166,7 +165,6 @@
   align-items: center;
   width: 100%;
   padding-left: 23px;
-  position: relative;
   /* background-color: blueviolet; */
   height: 100%;
   padding-right: 23px;

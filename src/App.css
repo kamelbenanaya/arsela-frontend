@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
+
 .font-face-gm {
   font-family: "Poppins Medium";
- }
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -29,36 +31,35 @@
 .App-link {
   color: #61dafb;
 }
-.spinner-container{
+.spinner-container {
   width: 100%;
   height: 100%;
   display: flex;
 }
 
-.beforecard{
+.beforecard {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   margin-top: 12px;
   width: 100%;
   flex-wrap: wrap;
   padding-left: 11px;
 }
-.app-container{
+.app-container {
   display: flex;
-  
+
   width: 100%;
   min-height: 500px;
   height: fit-content;
 }
-.sidebar{
-  
+.sidebar {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   box-shadow: rgb(100 100 111 / 10%) 0px 0px 15px;
   padding: 15px;
 }
-.productNotFound{
+.productNotFound {
   text-align: center;
   width: 100%;
   font-size: 42px;

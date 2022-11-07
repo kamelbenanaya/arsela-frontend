@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
-import Card from "../card/Card";
-
+import Card from "../card/index";
+import { useGlobalContext } from "../../context/GlobalContext";
 export const ProductList = ({
   productsList,
   setproductsList,
@@ -10,6 +10,8 @@ export const ProductList = ({
   error,
   resetOnSubmit,
 }) => {
+  const { globalState, globalDispatch } = useGlobalContext();
+
   useEffect(() => {
     setproductsList(data);
   }, [data]);
@@ -51,6 +53,9 @@ export const ProductList = ({
                 Promotion={product.pricePromotion.promotion}
                 priceAfterPromo={product.pricePromotion.priceAfterPromo}
                 productBrand={product?.brand?.name}
+                addItemToCart={(item) => {
+                  globalDispatch({ type: "addItemToCart", item });
+                }}
               />
             </div>
           );

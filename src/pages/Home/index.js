@@ -14,19 +14,19 @@ import { CategoriesFilter } from "../../components/sidebar/CategoriesFilter";
 
 const getCategories = async () => {
   const response = await axios.get(
-    "https://api-talents.lebondeveloppeur.com/api/v1/categories/"
+    `${process.env.REACT_APP_BACKEND_URL}/api/v1/categories/`
   );
   return response.data.data;
 };
 const getBrands = async () => {
   const response = await axios.get(
-    "https://api-talents.lebondeveloppeur.com/api/v1/brands/"
+    `${process.env.REACT_APP_BACKEND_URL}/api/v1/brands/`
   );
   return response.data.data;
 };
 const getProducts = async () => {
   const response = await axios.get(
-    "https://api-talents.lebondeveloppeur.com/api/v1/products/"
+    `${process.env.REACT_APP_BACKEND_URL}/api/v1/products/`
   );
   return response.data.data;
 };
@@ -38,7 +38,7 @@ const getProductsFiltred = async ({ queryKey }) => {
 
   const { brand, category, min, max } = queryKey[1];
   const response = await axios.get(
-    "https://api-talents.lebondeveloppeur.com/api/v1/products/",
+    `${process.env.REACT_APP_BACKEND_URL}/api/v1/products/`,
     {
       params: { brand, category, min, max },
     }
@@ -168,10 +168,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {" "}
       <Slider />
       <div className="app-container ">
         <div className="sidebar">
+          {" "}
           <Sidebar onSubmit={onSubmit} onReset={resetOnSubmit}>
             <BrandFilter brands={brands} setBrands={setBrands} />
             <PriceFilter
@@ -193,10 +194,9 @@ function App() {
             error={error}
             resetOnSubmit={resetOnSubmit}
           />
-          <ItSupport />
         </div>
       </div>
-      <Footer />
+      <ItSupport />
     </div>
   );
 }

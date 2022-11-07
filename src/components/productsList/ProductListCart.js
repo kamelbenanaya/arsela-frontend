@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "../spinner/Spinner";
-import Card from "../card/Card";
+import Card from "../card/index";
 import { useGlobalContext } from "../../context/GlobalContext";
 import Cardvertical from "../card/Cardvertical";
 

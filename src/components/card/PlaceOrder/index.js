@@ -30,7 +30,7 @@ const PlaceOrder = ({
       <div className="PlaceOrderContainer">
         <div className="imageContainer">
           <p className="quantityImage">{quantity}</p>
-          <img classeName="imagePlaceOrder" src={productImage} width="100px" />
+          <img classeName="imagePlaceOrder" src={productImage} />
         </div>
         <div className="titleProductPlaceOrder">
           <div className="firstRowTitleProductPlaceOrder">

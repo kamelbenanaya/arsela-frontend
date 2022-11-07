@@ -55,3 +55,8 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+div.imageContainer > img {
+  padding-top: 10px;
+  width: 100px;
+}

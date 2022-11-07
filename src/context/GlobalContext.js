@@ -68,12 +68,18 @@ export function GlobalContextProvider({ children }) {
     cartTotalItems: 0,
   });
   useEffect(() => {
-   globalState.cartProducts.map((e)=>{
-    if (e.quantity === 0) {
-      globalDispatch({
-         type: "deleteProductInCart",productId :e.productId
-       });
-   }})
+    globalState.cartProducts.map((e) => {
+      if (e.quantity === 0) {
+        globalDispatch({
+          type: "deleteProductInCart",
+          productId: e.productId,
+        });
+      }
+    });
+    console.log(
+      "🚀 ~ file: GlobalContext.js ~ line 79 ~ GlobalContextProvider ~ globalState",
+      globalState
+    );
   }, [globalState]);
 
   //   const [cartProducts, setCartProducts] = useState([]);

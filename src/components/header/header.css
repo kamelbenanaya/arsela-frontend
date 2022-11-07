@@ -1,31 +1,6 @@
 * {
   font-family: Poppins Medium;
-}
-
-.Menu {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-.logo {
-  width: 180px;
-  height: 42px;
-  padding-left: 73px;
-  padding-top: 19px;
-}
-.iconsheader {
-  display: flex;
-}
-.iconheader {
-  width: 25px;
-  height: 21px;
-  color: #f26522;
-  /* top: 21px;
-    left: 207px; */
-  opacity: 1;
-  /* position: relative; */
-  padding-right: 50px;
-  padding-top: 23px;
+  /* background-color: white; */
 }
 
 nav {
@@ -117,17 +92,15 @@ nav > ul li:hover .sous {
   color: white;
   background: red;
 }
-.containerCartShopping {
-  position: relative;
-}
+
 /****** responsive */
 @media only screen and (max-width: 600px) {
   nav {
     display: none;
   }
-  .iconsheader {
+  /* .iconsheader {
     display: none;
-  }
+  } */
   .Menu {
     justify-content: space-between;
     width: 351px;
