@@ -18,7 +18,7 @@ export const Index = () => {
   return (
     <CartPage>
       <Slider />
-      <p style={{ fontSize: "40px" }}>Bascket</p>
+      <p style={{ fontSize: "40px" }}>Basket</p>
       <div
         className="cartPageContainer"
         style={{ color: "black", margin: "40px" }}

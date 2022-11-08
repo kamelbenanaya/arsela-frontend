@@ -149,10 +149,11 @@ export const Index = () => {
         </MenuitemContainer>
         <IconContainerMobile>
           <StyledFontAwesomeIconMenu icon={faHeart} />
+          <StyledLink to="/cart" onClick={onCancelClicked}>
           <CartItemContainer>
           <Countshopcard>{globalState.cartTotalItems}</Countshopcard>
                   <StyledFontAwesomeIconMenu icon={faCartShopping} />
-        </CartItemContainer>
+        </CartItemContainer></StyledLink>
           <StyledFontAwesomeIconMenu icon={faUser} />
         </IconContainerMobile>
       </Drawer>

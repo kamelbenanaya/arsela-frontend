@@ -19,12 +19,8 @@ function Cardvertical({
   intialprice,
   intialpricePromo,
 }) {
-  console.log("🚀 ~ file: Cardvertical.js ~ line 23 ~ productId", productId);
+
   const { globalState, globalDispatch } = useGlobalContext();
-  console.log(
-    "🚀 ~ file: Cardvertical.js ~ line 23 ~ globalState",
-    globalState
-  );
   const incrementCountOnClick = () => {
     globalDispatch({
       type: "incrementCount",
