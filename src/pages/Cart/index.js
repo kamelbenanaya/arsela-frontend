@@ -7,7 +7,8 @@ import { useGlobalContext } from "../../context/GlobalContext";
 import ProductListCart from "../../components/productsList/ProductListCart";
 import PlaceOrder from "../../components/card/PlaceOrder/";
 import ProductCartOrdred from "../../components/productsList/ProductCartOrdred";
-import { CartPage } from "./styles";
+import { CartPage, CartPageContainer } from "./styles";
+import BasketSummary from "../../components/BasketSummary/index";
 export const Index = () => {
   const { globalState } = useGlobalContext();
   console.log(
@@ -19,13 +20,11 @@ export const Index = () => {
     <CartPage>
       <Slider />
       <p style={{ fontSize: "40px" }}>Basket</p>
-      <div
-        className="cartPageContainer"
-        style={{ color: "black", margin: "40px" }}
-      >
+      <CartPageContainer>
         <ProductListCart />
-        <ProductCartOrdred />
-      </div>
+        {/* <ProductCartOrdred /> "list order avec images ancien model" */}
+        <BasketSummary />
+      </CartPageContainer>
     </CartPage>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as BrowserRouter,Link } from "react-router-dom";
-
+import { useGlobalContext } from "../../context/GlobalContext";
+import { incrementCount } from "../../context/helpers";
 import Index from './index';
 
 
@@ -23,9 +24,40 @@ aaaaa
    </div> */}
    </BrowserRouter>
 
-export const Default = Template.bind({});
-export const ShortDescription = Template.bind({})
-ShortDescription.args = {
-    productDesc:"short description"
+export const Default = Template.bind({
+});
+export const Primary = ({productId,
+  productName,
+  productImage,
+  productDesc,
+  productPrice,
+  productBrand,
+  Promotion,
+  priceAfterPromo,
+  quantity,
+  intialprice,
+  intialpricePromo}) => {
+const { globalState, globalDispatch } = useGlobalContext();
+const incrementCountOnClick = () => {
+  globalDispatch({
+    type: "incrementCount",
+    productId,
+    intialprice,
+    intialpricePromo,
+  });
+};
+const decrementCountonClick = () => {
+  globalDispatch({
+    type: "decrementCount",
+    productId,
+    intialprice,
+    intialpricePromo,
+  });
+};
+const deleteProductInCartOnClick = () => {
+  globalDispatch({
+    type: "deleteProductInCart",
+    productId,
+  });
+};
 }
-

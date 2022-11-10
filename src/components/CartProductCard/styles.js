@@ -83,7 +83,7 @@ export const Card = styled.div`
     flex-direction: row;
 
     height: 250px;
-    max-width:1151px;
+    max-width:1100px;
     box-shadow: 0px 0px 10px 10px #0000001a;
     border-radius: 10px;
 
